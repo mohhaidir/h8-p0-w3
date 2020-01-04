@@ -12,39 +12,39 @@ function targetTerdekat(arr) {
     let counterStatus = false // hasil dimana index 'x' array ditampung
     let checkLast = '' // hasil dimana index 'o' array ditampung
     let counter = 0
-  
+
     for (let i = 0; i < arr.length; i++) { // looping dilakukan sesuai panjang array
-        if(counterStatus) {
+        if (counterStatus) {
             counter++
         }
-  
-        if(arr[i] == 'o' && !counterStatus) {
+
+        if (arr[i] == 'o' && !counterStatus) {
             checkLast = 'o'
             counterStatus = true
         }
-  
-        if(arr[i] == 'x' && counterStatus) {
+
+        if (arr[i] == 'x' && counterStatus) {
             checkLast = 'x'
             return counter
         }
     }
-  
-    if(checkLast) {
+
+    if (checkLast) {
         counter = 0
         counterStatus = false
-  
-        for(let i = arr.length-1; i >= 0; i--) {
-  
-            if(counterStatus) {
+
+        for (let i = arr.length - 1; i >= 0; i--) {
+
+            if (counterStatus) {
                 counter++
             }
-  
-            if(arr[i] == 'o' && !counterStatus) {
+
+            if (arr[i] == 'o' && !counterStatus) {
                 checkLast = 'o'
                 counterStatus = true
             }
-  
-            if(arr[i] == 'x' && counterStatus) {
+
+            if (arr[i] == 'x' && counterStatus) {
                 checkLast = 'x'
                 return counter
             }

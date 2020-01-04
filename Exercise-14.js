@@ -11,17 +11,17 @@ Contoh jika arr inputan adalah [45, 20, 21, 2, 7] maka output: [ [ 20, 2 ], [ 7 
 
 function mengelompokkanAngka(arr) {
     let result = []
-    
+
     let temp_genap = []
     let temp_ganjil = []
     let temp_kel3 = []
-  
-    for(var i = 0; i < arr.length; i++) {
+
+    for (var i = 0; i < arr.length; i++) {
         // console.log(arr[i])
         if (arr[i] % 3 == 0) {
             temp_kel3.push(arr[i])
         } else if (arr[i] % 2 == 0) {
-            temp_genap.push(arr[i]) 
+            temp_genap.push(arr[i])
         } else if (arr[i] % 2 == 1) {
             temp_ganjil.push(arr[i])
         }
@@ -29,7 +29,7 @@ function mengelompokkanAngka(arr) {
     result.push(temp_genap, temp_ganjil, temp_kel3)
     return result
 }
-    
+
 // TEST CASES
 console.log(mengelompokkanAngka([2, 4, 6])); // [ [2, 4], [], [6] ]
 console.log(mengelompokkanAngka([1, 2, 3, 4, 5, 6, 7, 8, 9])); // [ [ 2, 4, 8 ], [ 1, 5, 7 ], [ 3, 6, 9 ] ]

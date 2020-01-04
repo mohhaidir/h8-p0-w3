@@ -8,20 +8,20 @@ Contoh, [1, 3, 9, 27, 81] adalah deret aritmatika dengan pertambahan nilai sebes
 
 function tentukanDeretGeometri(arr) {
     let temp = 0
-    
-    for (let i = arr.length-1; i > 0; i--) {
+
+    for (let i = arr.length - 1; i > 0; i--) {
         //console.log(arr[i] / arr[i-1], '-proses->')
-    
+
         if (temp == 0) {
-            temp = (arr[i] / arr[i-1])
-        } else if (temp != (arr[i] / arr[i-1])) {
+            temp = (arr[i] / arr[i - 1])
+        } else if (temp != (arr[i] / arr[i - 1])) {
             return false
         }
     }
     // console.log(temp,'=temporary=>')
     return true
 }
-  
+
 // TEST CASES
 console.log(tentukanDeretGeometri([1, 3, 9, 27, 81])); // true
 console.log(tentukanDeretGeometri([2, 4, 8, 16, 32])); // true
@@ -34,9 +34,9 @@ console.log(tentukanDeretGeometri([1, 2, 3, 4, 7, 9])); // false
 function tentukanDeretGeometri(arr) {
     let initiate = arr[1] / arr[0]
     let result = true
-    
-    for (let i = arr.length-1; i > 0; i--){
-        if(initiate != arr[i] / arr[i-1]){
+
+    for (let i = arr.length - 1; i > 0; i--) {
+        if (initiate != arr[i] / arr[i - 1]) {
             result = false
         }
     }
