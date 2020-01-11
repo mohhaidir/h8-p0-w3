@@ -9,11 +9,10 @@
 function pasanganTerbesar(num) {
   let parsedNum = num.toString()
   let temp = 0
-  // console.log(temp)
-  for (var i = 0; i < parsedNum.length-1; i++){
-  
-    if(temp < parsedNum[i] + parsedNum[i+1]){
-      temp = parsedNum[i] + parsedNum[i+1]
+  for (var i = 0; i < parsedNum.length - 1; i++) {
+
+    if (temp < parsedNum[i] + parsedNum[i + 1]) {
+      temp = parsedNum[i] + parsedNum[i + 1]
     }
   }
   return temp

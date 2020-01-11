@@ -10,42 +10,40 @@ Contoh, jika angka adalah 8, walaupun dia sudah palindrome, harus mencari angka 
 // Cara Manual
 
 function angkaPalindrome(num) {
-    for(; true;){
-      num++
-    
-    let palNum = num.toString()
-    let tempReverse = ''
-  
-      for(let i = palNum.length-1; i >= 0; i--){
-        tempReverse += palNum[i]
-      }
-      
-      if(palNum == tempReverse){
-        return num
-      }
+  for (; true; num++) {
+    let str = String(num)
+    let check = ''
+
+    for (let i = str.length - 1; i >= 0; i--) {
+      check += str[i]
+    }
+
+    if (check == str) {
+      return num
     }
   }
-    
+}
+
 console.log(angkaPalindrome(8)); // 9
 console.log(angkaPalindrome(10)); // 11
 console.log(angkaPalindrome(117)); // 121
 console.log(angkaPalindrome(175)); // 181
 console.log(angkaPalindrome(1000)); // 1001
-  
+
 // Cara Cepat
-  
+
 function angkaPalindrome(num) {
-    for (; true;){
-        num++
-  
-        let palNum = num.toString().split('').reverse().join('')
-      
-        if(num == palNum){
-            return num
-        }
+  for (; true;) {
+    num++
+
+    let palNum = num.toString().split('').reverse().join('')
+
+    if (num == palNum) {
+      return num
     }
+  }
 }
-  
+
 console.log(angkaPalindrome(8)); // 9
 console.log(angkaPalindrome(10)); // 11
 console.log(angkaPalindrome(117)); // 121

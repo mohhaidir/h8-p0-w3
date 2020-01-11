@@ -9,48 +9,30 @@ Jika tidak ditemukan 'x' sama sekali, function akan me-return nilai 0.
 // - Cara Hardcode -
 
 function targetTerdekat(arr) {
-    let counterStatus = false // hasil dimana index 'x' array ditampung
-    let checkLast = '' // hasil dimana index 'o' array ditampung
-    let counter = 0
-
-    for (let i = 0; i < arr.length; i++) { // looping dilakukan sesuai panjang array
-        if (counterStatus) {
-            counter++
-        }
-
-        if (arr[i] == 'o' && !counterStatus) {
-            checkLast = 'o'
-            counterStatus = true
-        }
-
-        if (arr[i] == 'x' && counterStatus) {
-            checkLast = 'x'
-            return counter
+    let loc = [
+        [],
+        []
+    ];
+    //mapping lokasi o dan x
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 'o') {
+            loc[0].push(i)
+        } else if (arr[i] === 'x') {
+            loc[1].push(i)
         }
     }
-
-    if (checkLast) {
-        counter = 0
-        counterStatus = false
-
-        for (let i = arr.length - 1; i >= 0; i--) {
-
-            if (counterStatus) {
-                counter++
-            }
-
-            if (arr[i] == 'o' && !counterStatus) {
-                checkLast = 'o'
-                counterStatus = true
-            }
-
-            if (arr[i] == 'x' && counterStatus) {
-                checkLast = 'x'
-                return counter
+    //hitung jarak terdekat
+    let shortest = arr.length
+    for (i = 0; i < loc[0].length; i++) {
+        for (let j = 0; j < loc[1].length; j++) {
+            let temp = Math.abs(loc[0][i] - loc[1][j])
+            if (shortest > temp) {
+                shortest = temp
             }
         }
     }
-    return 0 // jika tidak ada pasangan maka return 0
+    //jika tidak ada x atau o, return 0
+    return (loc[1].length > 0 && loc[0].length > 0) ? shortest : 0
 }
 
 // // TEST CASES
